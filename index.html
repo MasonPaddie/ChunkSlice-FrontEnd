@@ -1,16 +1,26 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<script type="text/javascript" src="brython.js"></script>
-<script type="text/javascript" src="brython_stdlib.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Document</title>
+
+    <!-- These 2 lines are all that is needed to activate pyscript -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
 </head>
-
-<body onload="brython(1)">
-<script type="text/python">
-import index
-</script>
+<body>
+    <h1>header</h1>
+    <py-config type="toml">
+        packages = ["numpy", "matplotlib", "numpy-stl"]
+        paths = ["./index.py"]
+    </py-config>
+    <py-script>
+        from index import foo
+        foo()
+    </py-script>
 </body>
-
 </html>
